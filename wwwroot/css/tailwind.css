@@ -13,3 +13,11 @@
 .slide-down {
     animation: slide-down 0.3s ease-out forwards;
 }
+
+.body-height-w-mb-nav{
+    height: calc(100vh - 256px);
+}
+
+.body-height-wh-mb-nav{
+     height: calc(100vh - 128px);
+}
