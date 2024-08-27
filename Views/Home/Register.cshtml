@@ -1,0 +1,64 @@
+@model CimenogluCourse.Models.User
+
+    <div class="w-3/4 mt-32">
+        <form method="post" asp-asp-controller="Home" asp-action="Register" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+            <div class="mb-4 flex flex-col ">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 md:mb-0 md:w-32" for="firstname">
+                         Adı
+                    </label>
+                    <input asp-for="@Model.FirstName"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:flex-grow" id="firstname" type="text" placeholder="Adı">
+                </div>
+                 <span asp-validation-for="@Model.FirstName" class="text-red-500 text-sm md:px-28 mt-1"></span>
+            </div>
+
+            <div class="mb-4 flex flex-col ">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 md:mb-0 md:w-32" for="lastname">
+                         Soyadı
+                    </label>
+                    <input asp-for="@Model.LastName"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:flex-grow" id="lastname" type="text" placeholder="Soyadı">
+                </div>
+                 <span asp-validation-for="@Model.LastName" class="text-red-500 text-sm md:px-28 mt-1"></span>
+            </div>
+
+            <div class="mb-4 flex flex-col ">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 md:mb-0 md:w-32" for="age">
+                         Yaş
+                    </label>
+                    <input asp-for="@Model.Age"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:flex-grow" id="age" type="text" placeholder="Yaş">
+                </div>
+                 <span asp-validation-for="@Model.Age" class="text-red-500 text-sm md:px-28 mt-1"></span>
+            </div>
+
+            <div class="mb-4 flex flex-col ">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 md:mb-0 md:w-32" for="mail">
+                         Mail
+                    </label>
+                    <input asp-for="@Model.Mail"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:flex-grow" id="mail" type="text" placeholder="Mail">
+                </div>
+                 <span asp-validation-for="@Model.Mail" class="text-red-500 text-sm md:px-28 mt-1"></span>
+            </div>
+
+            <div class="mb-4 flex flex-col ">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 md:mb-0 md:w-32" for="password">
+                         Parola
+                    </label>
+                    <input asp-for="@Model.Password"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline md:flex-grow" id="password" type="text" placeholder="Parola">
+                </div>
+                 <span asp-validation-for="@Model.Password" class="text-red-500 text-sm md:px-28 mt-1"></span>
+            </div>
+
+
+            <div class="mb-4 flex flex-col md:flex-row md:items-center">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit" name="btnUpdate">
+                    Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+

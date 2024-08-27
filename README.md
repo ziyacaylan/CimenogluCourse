@@ -28,6 +28,6 @@
 {
     "branch_adi":"PRJ-003",
     "task_tanim":"Model Validasyon",
-    "aciklama": "BE de model validasyon ders:66"
+    "aciklama": "BE de model validasyon ders:66, Layout daki menü sayfaları oluşturuldu, controller lar oluşturuldu."
 }
 ```  

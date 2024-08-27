@@ -10,7 +10,7 @@
     <link href="~/css/tailwind.css" rel="stylesheet" />
     @* <link rel="stylesheet" href="~/CimenogluCourse.styles.css" asp-append-version="true" /> *@
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
     <header class="h-16">
         <nav class="bg-sky-600 p-4">
@@ -40,12 +40,20 @@
 
                 <!-- Menu Items (Centered) -->
                 <div class="hidden md:flex flex-1 justify-center text-white">
-                    <ul class="flex space-x-8 text-yellow-400">
-                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Anasayfa</a></li>
-                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Kurslar</a></li>
-                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Hakkımızda</a></li>
-                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Haberler</a></li>
-                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">İletişim</a></li>
+                    <ul class="flex space-x-8 text-yellow-400 relative">
+                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="/" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Anasayfa</a></li>
+                        <li class="min-w-[50px] lg:min-w-[120px] relative group">
+                            <a href="#" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Kurslar</a>
+                            <!-- Dropdown Menü -->
+                            <ul class="absolute left-0 top-full hidden group-hover:block bg-sky-600 shadow-lg">
+                                <li class="min-w-[150px]"><a href="/courses" class="block px-4 py-2 text-yellow-400 hover:text-white hover:bg-sky-400">Kurslar</a></li>
+                                <li class="min-w-[150px]"><a href="/students" class="block px-4 py-2 text-yellow-400 hover:text-white hover:bg-sky-400">Öğrenci</a></li>
+                                <li class="min-w-[150px]"><a href="/teachers" class="block px-4 py-2 text-yellow-400 hover:text-white hover:bg-sky-400">Eğitmen</a></li>
+                            </ul>
+                        </li>
+                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="/Hakkımızda" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Hakkımızda</a></li>
+                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="/haberler" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">Haberler</a></li>
+                        <li class="min-w-[50px] lg:min-w-[120px]"><a href="/iletisim" class="hover:text-yellow-200 hover:font-semibold hover:underline text-center">İletişim</a></li>
                     </ul>
                 </div>
 
@@ -62,23 +70,31 @@
             <!-- Mobile Menu -->
             <div class="overflow-hidden transition-all duration-500 z-50 absolute top-16 left-0 w-full bg-sky-600" id="mobile-menu" style="--height: 200px; height: 0;">
                 <ul class="flex flex-col mt-4 space-y-2 text-white pl-5">
-                    <li class="min-w-[120px]"><a href="#" class="hover:text-gray-300 hover:underline text-center">Anasayfa</a></li>
-                    <li class="min-w-[120px]"><a href="#" class="hover:text-gray-300 hover:underline text-center">Kurslar</a></li>
-                    <li class="min-w-[120px]"><a href="#" class="hover:text-gray-300 hover:underline text-center">Hakkımızda</a></li>
-                    <li class="min-w-[120px]"><a href="#" class="hover:text-gray-300 hover:underline text-center">Haberler</a></li>
-                    <li class="min-w-[120px]"><a href="#" class="hover:text-gray-300 hover:underline text-center">İletişim</a></li>
+                    <li class="min-w-[120px]"><a href="/" class="hover:text-gray-300 hover:underline text-center">Anasayfa</a></li>
+                    <li class="min-w-[120px] relative group">
+                        <a href="/courses" class="hover:text-gray-300 hover:underline text-center">Kurslar</a>
+                        <!-- Dropdown Menü -->
+                        <ul class="hidden group-hover:flex flex-col space-y-2 pl-5">
+                            <li class="min-w-[120px]"><a href="/courses" class="hover:text-gray-300 hover:underline text-center">Kurslar</a></li>
+                            <li class="min-w-[120px]"><a href="/students" class="hover:text-gray-300 hover:underline text-center">Öğrenci</a></li>
+                            <li class="min-w-[120px]"><a href="/teachers" class="hover:text-gray-300 hover:underline text-center">Eğitmen</a></li>
+                        </ul>
+                    </li>
+                    <li class="min-w-[120px]"><a href="/Hakkımızda" class="hover:text-gray-300 hover:underline text-center">Hakkımızda</a></li>
+                    <li class="min-w-[120px]"><a href="/haberler" class="hover:text-gray-300 hover:underline text-center">Haberler</a></li>
+                    <li class="min-w-[120px]"><a href="/iletisim" class="hover:text-gray-300 hover:underline text-center">İletişim</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div class="h-[calc(100vh-128px)] bg-gray-100 z-0">
+    <div class="flex-1 bg-gray-100 p-4">
         <main role="main" class="pb-3 h-100 flex items-center justify-center pl-2">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="w-screen flex items-center h-16">
+    <footer class="w-screen flex items-center justify-end h-16">
         <div class="w-screen flex items-center justify-center h-16 bg-sky-600">
             &copy; 2024 - Çimenoğlu Akademi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Anasayfa</a>
         </div>

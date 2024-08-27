@@ -6,11 +6,31 @@ namespace CimenogluCourse.Controllers;
 
 public class HomeController : Controller
 {
+    private static RegisterUsers users = new RegisterUsers();
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
+    }
+
+    [HttpGet]
+    public IActionResult Register()
+    {
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Register(User usr)
+    {
+        if(this.ModelState.IsValid)
+        {
+            users.Add(usr);
+            return RedirectToAction("Index");
+        }
+
+        return View();
     }
 
     public IActionResult Index()
